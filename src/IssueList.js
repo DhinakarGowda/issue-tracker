@@ -3,7 +3,7 @@ import IssueItem from './IssueItem';
 
 function IssueList({ issues }) {
   return (
-    <div>
+    <div className="issue-list-container">
       {issues.map((issue) => (
         <IssueItem key={issue.id} issue={issue} />
       ))}
