@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import IssueList from './IssueList';
 
 function App() {
+  const issues = [
+    {
+      id: 1,
+      title: 'Login not working',
+      description: 'Users can’t log in after the latest update.',
+      status: 'open',
+    },
+    {
+      id: 2,
+      title: 'Page crash on submit',
+      description: 'Form submission crashes the page.',
+      status: 'closed',
+    },
+    {
+      id: 3,
+      title: 'Spelling mistake on homepage',
+      description: 'There’s a typo in the header banner.',
+      status: 'open',
+    },
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Issue Tracker</h1>
+      <IssueList issues={issues} />
     </div>
   );
 }
